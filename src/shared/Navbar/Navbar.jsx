@@ -26,22 +26,25 @@ const Navbar = () => {
         <Link to="/services">Services</Link>
       </li>
       <li>
-        <Link to="/blog">Blog</Link>
-      </li>
-      <li>
         <Link to="/contact">Contact</Link>
       </li>
-      <li className="font-bold">
-        {user ? (
-          <div>
-            <button onClick={handleLogout}>Logout</button>
-          </div>
-        ) : (
-          <div>
-            <Link to="/login">Login</Link>
-          </div>
-        )}
-      </li>
+      {user ? (
+        <>
+          <li>
+            <Link to="/mybookings">My Bookings</Link>
+          </li>
+          <li>
+            <Link className="font-bold" onClick={handleLogout}>
+              Logout
+            </Link>
+          </li>
+        </>
+      ) : (
+        <li>
+          {" "}
+          <Link to="/login">Login</Link>
+        </li>
+      )}
     </>
   );
   return (

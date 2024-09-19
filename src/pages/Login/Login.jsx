@@ -11,7 +11,7 @@ const Login = () => {
     const form = e.target;
     const email = form.email.value;
     const pass = form.password.value;
-    
+
     // Reset Error Message
     setError('');
 
